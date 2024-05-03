@@ -1,38 +1,29 @@
-.App {
-  text-align: center;
-}
+@import "bootstrap/dist/css/bootstrap.min.css";
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+.App-content {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+nav {
+  background-color: #212529;
+  height: 60px;
+  
+  a {
+    color: grey;
+    text-decoration: none;
+    font-size: calc(10px + 2vmin);
+  
+    &.active {
+      color: #464cbe;
+    }
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.page-content {
+  min-height: calc(100vh - 60px);
 }
