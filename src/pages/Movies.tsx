@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import { MOVIES } from "../data/movies";
 import Page from "../components/Page";
 import TableAction from "../components/TableAction";
@@ -27,11 +27,9 @@ const Movies: FC = () => {
     const [sortData, setSortData] = useState<SortData>(defaultSortData);
     const tableColumns = ['Title', 'Year', 'Rating', 'Thumbnail', ''];
 
-    useEffect(() => {
-        setMoviesOrder();
-    }, [sortData]);
+    function setMoviesOrder(sortData: SortData): void {
+        setSortData(() => sortData);
 
-    function setMoviesOrder(): void {
         let sortedMovieList = MOVIES.toSorted((a, b) => {
             let returnValue: number;
 
@@ -139,7 +137,7 @@ const Movies: FC = () => {
     return (
         <Page contentClass="py-4">
             <div className="container">
-                <SortingSelector sortData={sortData} updateSortingData={setSortData} />
+                <SortingSelector sortData={sortData} updateSortingData={setMoviesOrder} />
 
                 <table className="table table-dark table-bordered align-middle mt-3">
                     <thead>
