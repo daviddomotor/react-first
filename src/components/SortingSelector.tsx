@@ -28,7 +28,7 @@ const SortingSelector: FC<SortingSelectorProps> = ({sortData, updateSortingData}
         const value = selectChangeEvent.target.value
 
         updateSortingData({
-            ...sortData,
+            direction: SortDirection.DESC,
             sortBy: value as SortBy,
         })
     }

@@ -32,7 +32,7 @@ const Movies: FC = () => {
     }, [sortData]);
 
     function setMoviesOrder(): void {
-        let sortedMovieList = movies.toSorted((a, b) => {
+        let sortedMovieList = MOVIES.toSorted((a, b) => {
             let returnValue: number;
 
             switch (sortData.sortBy) {
@@ -135,10 +135,6 @@ const Movies: FC = () => {
             return <>{movie.title}</>
         }
     }
-
-    // function updateSortingData(sortData: SortData) {
-    //     setSortData(sortData);
-    // }
 
     return (
         <Page contentClass="py-4">
