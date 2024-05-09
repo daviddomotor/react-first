@@ -1,5 +1,12 @@
 .selected {
-    td {
-        background: #838383;
-    }
+  td {
+    background: #838383;
+  }
+}
+
+.actionsCell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 }
